@@ -8,6 +8,9 @@ import { FooterComponentComponent } from './footer-component/footer-component.co
 import { HomeComponentComponent } from './home-component/home-component.component';
 import { ListCategoriesComponentComponent } from './list-categories-component/list-categories-component.component';
 import { ProductsComponentComponent } from './product-module/products-component/products-component.component';
+import { FilterByTitlePipe } from './filter-by-title.pipe';
+import {FormsModule} from "@angular/forms";
+import { HighlightDirective } from './highlight.directive';
 
 @NgModule({
   declarations: [
@@ -16,11 +19,14 @@ import { ProductsComponentComponent } from './product-module/products-component/
     FooterComponentComponent,
     HomeComponentComponent,
     ListCategoriesComponentComponent,
-    ProductsComponentComponent
+    ProductsComponentComponent,
+    FilterByTitlePipe,
+    HighlightDirective
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

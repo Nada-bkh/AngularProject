@@ -1,13 +1,19 @@
-<div class="container">
+<div class="category" appHighlight>
+  <input type="text" [(ngModel)]="titre" placeholder="Rechercher par titre" class="form-control mb-3" />
+
   <div class="row">
-    <div *ngFor="let category of categories" class="col-md-4" style="margin-bottom: 20px;">
+    <div *ngFor="let category of categories | filterByTitle:titre" class="col-md-4" style="margin-bottom: 20px;">
       <div class="category">
-        <img [src]="category.image" alt="{{ category.title }}" class="img-fluid h-50 w-75">
-        <h3>{{ category.title }}</h3>
+        <img [src]="category.image" alt="{{ category.title }}" class="img-fluid h-50 w-75"
+             (click)="showDescription(category.description)">
+        <h3>{{ category.title | uppercase }}</h3>
         <p>{{ category.description }}</p>
+
         <p *ngIf="category.available">Disponible</p>
         <p *ngIf="!category.available">Non disponible</p>
-        <button class="btn btn-primary">Voir produits</button>
+
+        <button *ngIf="category.available" class="btn btn-primary">Voir produits</button>
+        <p *ngIf="!category.available">Catégorie non disponible</p>
       </div>
     </div>
   </div>

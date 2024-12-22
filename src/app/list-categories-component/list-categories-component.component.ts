@@ -7,6 +7,7 @@ import { Categorie } from '../models/categorie';
   styleUrls: ['./list-categories-component.component.css']
 })
 export class ListCategoriesComponentComponent {
+  titre: string = '';
   categories: Categorie[] = [
     {
       id: 1,
@@ -51,4 +52,8 @@ export class ListCategoriesComponentComponent {
       available: false
     }
   ];
+  showDescription(description: string) {
+    alert(description);
+  }
+
 }
