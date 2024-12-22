@@ -11,6 +11,10 @@ import { ProductsComponentComponent } from './product-module/products-component/
 import { FilterByTitlePipe } from './filter-by-title.pipe';
 import {FormsModule} from "@angular/forms";
 import { HighlightDirective } from './highlight.directive';
+import { NotFoundPageComponent } from './not-found-page/not-found-page.component';
+import { ProductsCategoryComponent } from './products-category/products-category.component';
+import { ProductsCategoryQPComponent } from './products-category-qp/products-category-qp.component';
+import { DetailsCategoryComponent } from './details-category/details-category.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +25,11 @@ import { HighlightDirective } from './highlight.directive';
     ListCategoriesComponentComponent,
     ProductsComponentComponent,
     FilterByTitlePipe,
-    HighlightDirective
+    HighlightDirective,
+    NotFoundPageComponent,
+    ProductsCategoryComponent,
+    ProductsCategoryQPComponent,
+    DetailsCategoryComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,15 @@
+<div class="container">
+  <h2>Produits de la catégorie {{ categoryId }}</h2>
+  <div class="row">
+    <div *ngFor="let product of filteredProducts" class="col-md-4">
+      <div class="product">
+        <img [src]="product.image" alt="{{ product.name }}" class="img-fluid">
+        <h3>{{ product.name }}</h3>
+        <p>{{ product.description }}</p>
+        <p>Prix: {{ product.price }} €</p>
+        <p>Marque: {{ product.brand }}</p>
+        <p *ngIf="product.promotion > 0">Promotion: {{ product.promotion }}%</p>
+      </div>
+    </div>
+  </div>
+</div>

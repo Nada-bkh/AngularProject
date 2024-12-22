@@ -1,9 +1,9 @@
-<div class="category" appHighlight>
+<div class="category">
   <input type="text" [(ngModel)]="titre" placeholder="Rechercher par titre" class="form-control mb-3" />
 
   <div class="row">
     <div *ngFor="let category of categories | filterByTitle:titre" class="col-md-4" style="margin-bottom: 20px;">
-      <div class="category">
+      <div class="category" appHighlight>
         <img [src]="category.image" alt="{{ category.title }}" class="img-fluid h-50 w-75"
              (click)="showDescription(category.description)">
         <h3>{{ category.title | uppercase }}</h3>
@@ -12,7 +12,11 @@
         <p *ngIf="category.available">Disponible</p>
         <p *ngIf="!category.available">Non disponible</p>
 
-        <button *ngIf="category.available" class="btn btn-primary">Voir produits</button>
+        <button *ngIf="category.available" class="btn btn-primary" [routerLink]="['/products', category.id]">
+          Voir produits</button>
+        <button *ngIf="category.available" class="btn btn-secondary" [routerLink]="['/products-qp']"
+                [queryParams]="{ id: category.id }">Voir produits 2</button>
+        <button class="btn btn-info" [routerLink]="['/details', category.id]">Voir détails</button>
         <p *ngIf="!category.available">Catégorie non disponible</p>
       </div>
     </div>
