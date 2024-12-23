@@ -31,8 +31,8 @@ This is an Angular-based e-commerce application that allows users to browse cate
 ### Installation
 
 1. Clone the repository:
-   git clone https://github.com/Nada-bkh/AngulatProject.git
-   cd your-repo-name
+   git clone https://github.com/Nada-bkh/AngularProject.git
+   cd AngularProject
 2. Install the dependencies:
 npm install
 3. Start the development server:
